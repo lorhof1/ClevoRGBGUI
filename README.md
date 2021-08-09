@@ -1,4 +1,4 @@
-#ClevoRGBGUI by lorhof1
+# ClevoRGBGUI by lorhof1
 
 Prequisites:
 
