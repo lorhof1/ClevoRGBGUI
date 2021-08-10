@@ -1,12 +1,11 @@
 import time, tkinter
 mode = "flash"
 color = "white"
+f = open("/sys/devices/platform/clevo_xsm_wmi/kb_color", "w")
 
 #try to set the kb color to white, error if impossible
 try:
-    f = open("/sys/devices/platform/clevo_xsm_wmi/kb_color", "w")
     f.write("white")
-    f.close()
     print("sucessfully test set keyboard color")
 
 except:
@@ -14,9 +13,7 @@ except:
 
 def setColor(passedColor):
     mode = "static"
-    f = open("/sys/devices/platform/clevo_xsm_wmi/kb_color", "w")
     f.write(passedColor)
-    f.close()
     print("sucessfully set keyboard color to " + passedColor)
 
 def flash(delay):
@@ -58,3 +55,5 @@ btnMagenta.pack()
 #btnFlash.pack()
 
 window.mainloop()
+
+f.close()
